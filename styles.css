@@ -1,0 +1,209 @@
+/* --------------------
+ Global Styles
+-------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #4a90e2, #6a11cb);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* --------------------
+ Container
+-------------------- */
+.container {
+  background: #fff;
+  width: 100%;
+  max-width: 420px;
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.15);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------
+ Title
+-------------------- */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+/* --------------------
+ Form
+-------------------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+form input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+form input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 6px rgba(74,144,226,0.3);
+}
+
+form button {
+  padding: 12px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.25s;
+}
+
+form button:hover {
+  background: #357abd;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(53,122,189,0.3);
+}
+
+/* --------------------
+ Expenses Section
+-------------------- */
+h2 {
+  margin: 10px 0;
+  color: #444;
+  font-size: 22px;
+  border-left: 4px solid #4a90e2;
+  padding-left: 8px;
+}
+
+#expense-list {
+  list-style: none;
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 5px;
+  scrollbar-width: thin;
+  scrollbar-color: #4a90e2 #f1f1f1;
+}
+
+/* Scrollbar Styling */
+#expense-list::-webkit-scrollbar {
+  width: 6px;
+}
+#expense-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+#expense-list::-webkit-scrollbar-thumb {
+  background: #4a90e2;
+  border-radius: 10px;
+}
+
+#expense-list li {
+  background: #f9f9f9;
+  margin-bottom: 10px;
+  padding: 12px 15px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 5px solid #4a90e2;
+  transition: transform 0.2s, background 0.2s;
+}
+
+#expense-list li:hover {
+  background: #eef4ff;
+  transform: translateX(3px);
+}
+
+#expense-list li span {
+  font-weight: 600;
+  color: #333;
+  font-size: 15px;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: #ff4d4d;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  background: #e63939;
+}
+
+/* --------------------
+ Total Section
+-------------------- */
+#total {
+  margin-top: 20px;
+  text-align: right;
+}
+
+#total h3 {
+  font-size: 20px;
+  color: #222;
+}
+
+#total-amount {
+  color: #4a90e2;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+/* --------------------
+ Responsive Design
+-------------------- */
+@media (max-width: 500px) {
+  .container {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  form button {
+    font-size: 15px;
+  }
+
+  #expense-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .delete-btn {
+    align-self: flex-end;
+  }
+}
